@@ -1,0 +1,27 @@
+#!/bin/sh
+
+while read file
+do
+	case "$1" in
+	"r") # rotate image 
+		convert -rotate -90 "$file" "$file";;
+	"R") # rotate image
+		convert -rotate 90 "$file" "$file";;
+	"d") # delete image
+		rm "$file";;
+	"g") # open image in Gimp
+			gimp "$file";;
+	"y") # Copy Filename
+		echo -n "$file" | xclip -selection clipboard;;
+	"Y") # Copy Filepath
+		echo -n "$(pwd)/$file" | xclip -selection clipboard;;
+	"f") # Invert on the x axis
+		convert -flop "$file" "$file";;
+	"F") # Invert on the y axis
+		convert -flip "$file" "$file";;
+	"w") # Set picute as Wallpaper
+	    cp $file /home/fynn/Bilder/Wallpaper/wall.jpg
+		feh --bg-scale /home/fynn/Bilder/Wallpaper/wall.jpg
+	esac
+done
+
