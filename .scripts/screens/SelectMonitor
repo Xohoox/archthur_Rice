@@ -1,0 +1,53 @@
+#!/bin/sh
+
+#1 : Verbundene Bildschirme herrausfinden
+screen=$(xrandr | grep "connected" | grep -v "disconnected" | awk '{print $1}' | dmenu -i -fn "System San Francisco Display")
+#echo $screen
+
+#Wurde dMenu abgebrochen
+if [ "$screen" = "" ]; then
+	exit
+fi
+
+positions="Rechts - right-of
+Links - left-of
+Oben - above
+Unten - below
+Aus - off
+Nichts - none"
+
+#2 : Position abfragen
+position=$(echo "$positions\n" | awk '{print $1}' | dmenu)
+
+#Wurde dMenu abgebrochen
+if [ "$position" = "" ]; then
+	exit
+fi
+echo "$positions\n" | grep $position | awk '{print $3}'
+
+#3 : Befehl zusammenbauen
+pos=$(echo "$positions\n" | grep $position | awk '{print $3}')
+
+if [ $pos = "off" ]; then
+	befehl="xrandr --output $screen --off"
+elif [ $pos = "none" ]
+then
+	befehl="xrandr --output $screen --auto"
+else
+	befehl="xrandr --output $screen --auto --$pos"
+	temp=$(xrandr | grep "connected" | grep -v "disconnected"| grep -v $screen  | awk '{print $1}' | dmenu)
+
+	#Wurde dMenu abgebrochen
+	if [ "$temp" = "" ]; then
+		exit
+	fi
+
+	befehl="${befehl} $temp"
+fi
+
+$befehl
+sleep 3
+i3 restart
+
+#sleep 30
+#~/Monitore.sh

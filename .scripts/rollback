@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Script must be executed by root
+if [ "$(whoami)" != "root" ]; then
+	echo "You must run this script as root!"
+	exit 1
+fi
+
+# TESTING Snapshot
+if [ "$(mount | grep "on / type.*/TESTING")" != "" ]; then
+	echo "You can't boot the TESTING Snapshot"
+	exit 1
+elif [ "$(mount | grep "on / type.*/STABLE")" != "" ]; then
+	snapshot='STABLE'
+elif [ "$(mount | grep "on / type.*/OLDSTABLE")" != "" ]; then
+	snapshot='OLDSTABLE'
+fi
+
+echo $snapshot
+exit 1
+
+# Rollback
+btrfs subvolume delete /.snapshots/TESTING
+btrfs subvolume snapshot / /.snapshots/TESTING/

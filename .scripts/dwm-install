@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cd ~/repos/dwm
+git reset --hard origin/master && 
+for branch in $(git for-each-ref --format='%(refname)' refs/heads/ | cut -d'/' -f3); do
+	if [ "$branch" != "master" ];then
+		echo $branch
+		git merge $branch -m $branch
+	fi
+done
+make -j5 && sudo make clean install
+

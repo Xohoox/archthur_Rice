@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# ----------OLDSTABEL---------
+btrfs subvolume delete /.snapshots/OLDSTABLE
+mv /.snapshots/STABLE /.snapshots/OLDSTABLE
+sed -i 's/STABLE/OLDSTABLE/g' /.snapshots/OLDSTABLE/etc/fstab
+cp /boot/vmlinuz-linux-stable /boot/vmlinuz-linux-oldstable
+cp /boot/initramfs-linux-stable.img /boot/initramfs-linux-oldstable.img
+
+
+# -----------STABEL-----------
+btrfs subvolume snapshot / /.snapshots/STABLE/
+sed -i 's/TESTING/STABLE/g' /.snapshots/STABLE/etc/fstab
+cp /boot/vmlinuz-linux /boot/vmlinuz-linux-stable
+cp /boot/initramfs-linux.img /boot/initramfs-linux-stable.img

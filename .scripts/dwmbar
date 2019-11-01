@@ -1,0 +1,119 @@
+#!/bin/sh
+
+trap 'update' 5
+
+delim=" |"
+
+# update the bar
+update()
+{
+	xsetroot -name	"$(status)"
+	wait
+	#echo -n $(status)
+}
+
+status()
+{
+	# volume
+	vol=$(amixer | awk 'NR==6 gsub(/[\[\]%]/,""); NR==6 {print $5};')
+	mute=$(pacmd list-sinks | grep muted | awk '{print $2}')
+
+	if [ "$mute" = "yes" ]; then
+		vol=""
+	elif [ $vol -eq 0 ]
+   	then
+		vol=": $vol%"
+  	elif [ $vol -le 40 ]
+   	then
+		vol=": $vol%"
+	elif [ $vol -le 60 ]
+   	then 
+		vol=": $vol%"
+	else
+		vol=": $vol%"
+	fi
+
+	echo -n " $vol $delim"
+
+	# btrfs disk space
+	space=$(btrfs filesystem usage / 2> /dev/null | awk 'NR==7 {print $3}')
+	echo -n " : $space $delim"
+
+	# temperature
+	temp=$(sensors| grep temp1  | awk 'NR==4 gsub(/[°C]/,""); {print substr($2,2)}' | sed 's/\.0//g')
+
+	if [ "$temp" -le 30  ]; then
+		temp=": $temp"
+	elif [ "$temp" -le 40  ]
+	then
+		temp=": $temp"
+	elif [ "$temp" -le 60  ]
+	then
+		temp=": $temp"
+	elif [ "$temp" -le 70  ]
+	then
+		temp=": $temp"
+	else
+		temp=": $temp"
+	fi	
+
+	echo -n " $temp°C $delim"
+
+	# battery
+	bat=$(acpi | awk 'NR==1 gsub(/[%,]/,"") ;NR==1 {print $4}')
+	charging=$(acpi -a | awk '{print $3}')
+	
+	if [ "$charging" = "on-line"  ]; then
+		bat=": $bat"
+	elif [ "$bat" -le 10  ]
+	then
+		bat=": $bat"
+	elif [ "$bat" -le 25  ]
+	then
+		bat=": $bat"
+	elif [ "$bat" -le 50  ]
+	then
+		bat=": $bat"
+	elif [ "$bat" -le 75  ]
+	then
+		bat=": $bat"
+	else
+		bat=": $bat"
+	fi	
+	
+
+	echo -n " $bat% $delim"
+
+	# wifi
+	wifi=$(grep wlo1 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+
+	if [ "$wifi" -eq 0 ]; then
+		symbol=''
+	elif [ "$wifi" -le 40 ]
+	then
+		symbol=' '
+	elif [ "$wifi" -le 60 ]
+	then
+		symbol=''
+	elif [ "$wifi" -g 60 ]
+	then
+		symbol=''
+	fi
+
+
+	if [ "$symbol" != '' ]; then
+		echo -n " $symbol  "
+	fi
+
+	# time
+	time=$(date "+%H:%M %d.%m.%y")
+	echo -n " $time "
+
+}
+
+while true; do
+	update
+	sleep 15 &
+	wait $!
+done
+
