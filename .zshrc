@@ -7,11 +7,11 @@
 [[ $- != *i* ]] && return
 
 #Add .scripts to path
-export PATH=$PATH:$HOME/.scripts
+#export PATH=$PATH:$HOME/.scripts
 
 # Alias
 alias h='cd ~'
-alias vi3='vim ~/.config/i3/config'
+#alias vi3='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
 alias la='ls -a'
 alias ls='ls --color=auto'
@@ -22,10 +22,10 @@ alias db-stop='sudo systemctl stop postgresql'
 alias config='git --git-dir=$HOME/repos/archthur_rice.git/ --work-tree=$HOME'
 
 # Variables
-export EDITOR="vim"
-export TERMINAL="st"
-export BROWSER="chromium"
-export TERM="xterm-256color"
+#export EDITOR="vim"
+#export TERMINAL="st"
+#export BROWSER="chromium"
+#export TERM="xterm-256color"
 
 # ZSH Settings
 
@@ -36,5 +36,5 @@ zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
 # Prompt
-source ~/repos/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/repos/powerlevel10k/powerlevel10k.zsh-theme
 #source ~/Repos/agnoster-zsh-theme/agnoster.zsh-theme
