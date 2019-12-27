@@ -1,0 +1,65 @@
+# Programs
+super + Return
+		$TERMINAL
+
+super + c
+		$BROWSER
+
+super + F1
+		st ranger
+
+super + F12
+		st htop
+
+
+# Scrips
+
+## Lock Screen
+super + shift + x
+		 repos/i3lock-fancy-multimonitor/lock -u -p -n
+
+## Screen Profiels
+super + alt + s
+		.scripts/screens/Screen-Profiles
+
+## Choose a Monitor
+super + shift + s
+		.scripts/screens/SelectMonitor
+
+## Pass 
+super + shift + p
+		passmenu
+
+## Rice Todo List
+super + shift + t
+		todo
+
+## Clipmenu
+super + shift + c
+		clipmenu &
+
+## Mount / Unount
+super + F10
+		dmenumount&
+super + F11
+		dmenuumount&
+
+# Other
+super + F8
+		promt "Hibernate?" "systemctl hibernate"
+
+
+## Audio Control
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+		pactl set-sink-volume 0 {+5%,-5%}; pkill -SIGTRAP dwmbar
+
+XF86AudioMute 
+		pactl set-sink-mute 0 toggle; pkill -SIGTRAP dwmbar
+
+{XF86AudioPlay,XF86AudioPause,XF86AudioNext,XF86AudioPrev}
+		playerctl {play, pause, next, previous}
+
+
+## Brightness
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+		xbacklight {-inc 20,-dec 20}
