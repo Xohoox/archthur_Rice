@@ -20,6 +20,7 @@ alias db-start='sudo systemctl start postgresql'
 alias db-connect='psql -h localhost -d versand25'
 alias db-stop='sudo systemctl stop postgresql'
 alias config='git --git-dir=$HOME/repos/archthur_rice.git/ --work-tree=$HOME'
+alias dwm-clean='make clean && rm -f config.h && git reset --hard origin/master'
 
 # Variables
 #export EDITOR="vim"
