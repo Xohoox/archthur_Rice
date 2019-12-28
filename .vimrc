@@ -87,6 +87,6 @@ set nu rnu
 " R Markdown Compilieren
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 " Wenn Datei ein pdf wird zathura starten
-autocmd FileType rmd map <F1> :!vimOpenFile %<enter>
+autocmd FileType rmd map <F2> :!vimOpenFile %<enter>
 
 "autocmd .Xresources map <F5> :!xrdb .Xresources
