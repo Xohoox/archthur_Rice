@@ -60,10 +60,6 @@ if has('syntax') && has('eval')
 endif
 
 
-" R Markdown Compilieren
-autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
-"autocmd .Xresources map <F5> :!xrdb .Xresources
-
 " Settings
 set tabstop=4
 set backupdir=/tmp//
@@ -86,3 +82,11 @@ set nu rnu
 
 " Become root in vim
 "map <F9> :w !sudo tee %<enter>
+
+
+" R Markdown Compilieren
+autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+" Wenn Datei ein pdf wird zathura starten
+autocmd FileType rmd map <F1> :!vimOpenFile %<enter>
+
+"autocmd .Xresources map <F5> :!xrdb .Xresources

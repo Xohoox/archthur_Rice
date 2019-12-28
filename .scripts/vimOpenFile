@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# $1 : Filename
+
+filePath=$1
+filename=$(echo $filePath | sed 's/^.*\///; s/\..*$//')
+fileExtention=$(echo $filePath | sed 's/.*\.//')
+
+# Open pdf in zathura
+if [ $fileExtention = "rmd" ]; then
+
+	# Check the output format
+	format=$(grep "output: " $filePath | awk '{print $2}')
+	if [ $format =  'pdf_document' ]; then
+		pdf=$(echo $filePath | sed 's/.rmd/.pdf/')
+		if [ -f $pdf ]; then
+			zathura $pdf &
+		else
+			echo "Datei noch nicht Kompelliert"
+		fi
+	else
+		echo "Output format nicht bekannt"
+	fi
+fi
