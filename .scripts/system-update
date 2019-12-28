@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if [ -z "$(mount | grep subvol=/@snapshots/TESTING)" ]; then
+	echo "You have to boot the TESTING snapshot!"
+	exit
+fi
+
+if [ "$(whoami)" != "root" ]; then
+	echo "You have to run this script as root!"
+	exit
+fi
+
+
+# ---- OLDSTABLE ----
+btrfs subvolume delete /.snapshots/OLDSTABLE/
+mv /.snapshots/STABLE /.snapshots/OLDSTABLE/
+sed -i 's/STABLE/OLDSTABLE/g' /.snapshots/OLDSTABLE/etc/fstab
+cp /boot/vmlinuz-linux-stable /boot/vmlinuz-linux-oldstable
+cp /boot/initramfs-linux-stable.img /boot/initramfs-linux-oldstable.img
+
+
+# ---- STABLE ----
+btrfs subvolume snapshot / /.snapshots/STABLE
+sed -i 's/TESTING/STABLE/g' /.snapshots/STABLE/etc/fstab
+cp /boot/vmlinuz-linux /boot/vmlinuz-linux-stable
+cp /boot/initramfs-linux.img /boot/initramfs-linux-stable.img
+
+# ---- Update System ----
+ reflector --verbose --country 'Germany' -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
+ pacman -Syu
+ btrfs balance start -dusage=5 /btrfs
