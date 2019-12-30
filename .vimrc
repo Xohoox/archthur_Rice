@@ -65,6 +65,13 @@ set tabstop=4
 set backupdir=/tmp//
 set directory=/tmp//
 set undodir=~/.vimundo/
+set nocompatible
+set showcmd
+syntax enable
+set path+=**
+
+" Create ctags
+command! Mktags !ctags -R .
 
 " Copy and Past
 map <C-p> "+p
