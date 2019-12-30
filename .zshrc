@@ -8,10 +8,10 @@
 
 #Add .scripts to path
 #export PATH=$PATH:$HOME/.scripts
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # Alias
 alias h='cd ~'
-#alias vi3='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
 alias la='ls -a'
 alias ls='ls --color=auto'
