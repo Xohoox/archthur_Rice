@@ -1,3 +1,7 @@
 [user]
 	email = f.michell-auli@live.de
 	name = Fynn Michell-Auli
+[credential]
+	helper = store
+[core]
+	editor = vim
