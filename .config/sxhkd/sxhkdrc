@@ -38,16 +38,19 @@ super + shift + t
 super + shift + c
 		clipmenu &
 
+# Other
+super + F7
+		promt "Poweroff?" "poweroff"
+super + F8
+		promt "Hibernate?" "systemctl hibernate"
+super + F9
+		promt "Reboot?" "reboot"
+
 ## Mount / Unount
 super + F10
 		dmenumount&
 super + F11
 		dmenuumount&
-
-# Other
-super + F8
-		promt "Hibernate?" "systemctl hibernate"
-
 
 ## Audio Control
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
