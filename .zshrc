@@ -13,6 +13,7 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 # Alias
 alias h='cd ~'
 alias vrc='vim ~/.vimrc'
+alias vzrc='vim ~/.zshrc'
 alias la='ls -a'
 alias ls='ls --color=auto'
 alias v='vim'
@@ -21,12 +22,6 @@ alias db-connect='psql -h localhost -d versand25'
 alias db-stop='sudo systemctl stop postgresql'
 alias config='git --git-dir=$HOME/repos/archthur_rice.git/ --work-tree=$HOME'
 alias dwm-clean='make clean && rm -f config.h && git reset --hard origin/master'
-
-# Variables
-#export EDITOR="vim"
-#export TERMINAL="st"
-#export BROWSER="chromium"
-#export TERM="xterm-256color"
 
 # ZSH Settings
 
