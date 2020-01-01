@@ -69,6 +69,8 @@ set nocompatible
 set showcmd
 syntax enable
 set path+=**
+set ignorecase
+set smartcase
 
 " Create ctags
 command! Mktags !ctags -R .
