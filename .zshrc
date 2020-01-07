@@ -12,6 +12,7 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # Alias
 alias h='cd ~'
+alias cdwm='cd ~/repos/dwm'
 alias vrc='vim ~/.vimrc'
 alias vzrc='vim ~/.zshrc'
 alias la='ls -a'
