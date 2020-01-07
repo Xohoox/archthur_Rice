@@ -106,7 +106,7 @@ status()
 	#fi
 
 	# time
-	time=$(date "+%H:%M %d.%m.%y")
+	time=$(date "+%H:%M   %d.%m.%y")
 	echo -n " $time "
 
 }
