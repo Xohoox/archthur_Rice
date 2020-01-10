@@ -89,6 +89,8 @@ set nu rnu
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
+" jumpt to <++>
+map <space><space> /<++><enter>cf>
 " Become root in vim
 "map <F9> :w !sudo tee %<enter>
 
