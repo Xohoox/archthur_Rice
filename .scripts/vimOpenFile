@@ -19,6 +19,14 @@ case "$fileExtention" in
 				else
 					echo "Datei noch nicht kompelliert"
 				fi
+			elif [ $format = 'html_document' ]; then
+				html=$(echo $filePath | sed 's/.rmd/.html/')
+				if [ -f $html ]; then
+					chromium $html &
+				else
+					echo "Datei noch nicht kompelliert"
+				fi
+
 			else
 				echo "\n--------------------------------"
 				echo "Output format nicht bekannt!!!!!"
