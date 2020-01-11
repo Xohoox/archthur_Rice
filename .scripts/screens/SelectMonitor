@@ -14,7 +14,9 @@ Links - left-of
 Oben - above
 Unten - below
 Aus - off
-Nichts - none"
+Nichts - none
+Duplizieren - same-as
+Rotation"
 
 #2 : Position abfragen
 position=$(echo "$positions\n" | awk '{print $1}' | dmenu)
@@ -25,29 +27,43 @@ if [ "$position" = "" ]; then
 fi
 echo "$positions\n" | grep $position | awk '{print $3}'
 
-#3 : Befehl zusammenbauen
-pos=$(echo "$positions\n" | grep $position | awk '{print $3}')
+if [ "$position" = "Rotation" ]; then
+    rotations="Normal - normal\\n
+    Rechts - right\\n
+    Invertiert - inverted\\n
+    Links - left"
 
-if [ $pos = "off" ]; then
-	befehl="xrandr --output $screen --off"
-elif [ $pos = "none" ]
-then
-	befehl="xrandr --output $screen --auto"
+    rotation=$(echo $rotations | awk '{print $1}' | dmenu)
+    if [ "$rotation" = "" ]; then
+        exit
+    fi
+
+    rot=$(echo $rotations | grep $rotation | awk '{print $3}')
+    befehl="xrandr --output $screen --rotate $rot"
+    echo $befehl
 else
-	befehl="xrandr --output $screen --auto --$pos"
-	temp=$(xrandr | grep "connected" | grep -v "disconnected"| grep -v $screen  | awk '{print $1}' | dmenu)
+    #3 : Befehl zusammenbauen
+    pos=$(echo "$positions\n" | grep $position | awk '{print $3}')
 
-	#Wurde dMenu abgebrochen
-	if [ "$temp" = "" ]; then
-		exit
-	fi
+    if [ $pos = "off" ]; then
+	    befehl="xrandr --output $screen --off"
+    elif [ $pos = "none" ]
+    then
+	    befehl="xrandr --output $screen --auto"
+    else
+	    befehl="xrandr --output $screen --auto --$pos"
+	    temp=$(xrandr | grep "connected" | grep -v "disconnected"| grep -v $screen  | awk '{print $1}' | dmenu)
+
+	    #Wurde dMenu abgebrochen
+	    if [ "$temp" = "" ]; then
+		    exit
+	    fi
 
 	befehl="${befehl} $temp"
+    fi
 fi
-
 $befehl
-sleep 3
-i3 restart
 
+~/.fehbg
 #sleep 30
 #~/Monitore.sh
