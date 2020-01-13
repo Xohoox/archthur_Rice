@@ -50,4 +50,17 @@ setopt COMPLETE_ALIASES
 #source ~/repos/powerlevel10k/powerlevel10k.zsh-theme
 #source ~/Repos/agnoster-zsh-theme/agnoster.zsh-theme
 
+# syntax highlighting
 source /home/fynn/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Setup fzf
+export FZF_DEFAULT_OPS="--extended"
+if [[ ! "$PATH" == */home/fynn/repos/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/fynn/repos/fzf/bin"
+fi
+
+## Auto-completion
+[[ $- == *i* ]] && source "/home/fynn/repos/fzf/shell/completion.zsh" 2> /dev/null
+
+## Key bindings
+source "/home/fynn/repos/fzf/shell/key-bindings.zsh"
