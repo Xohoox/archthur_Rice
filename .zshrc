@@ -49,3 +49,5 @@ setopt COMPLETE_ALIASES
 # Prompt
 #source ~/repos/powerlevel10k/powerlevel10k.zsh-theme
 #source ~/Repos/agnoster-zsh-theme/agnoster.zsh-theme
+
+source /home/fynn/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
