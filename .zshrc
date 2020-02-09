@@ -26,6 +26,7 @@ alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags &&
 
 # ZSH Settings
 bindkey -v
+bindkey '^e' edit-command-line
 # use the vi navigation keys (hjkl) besides cursor keys in menu completion
 bindkey -M menuselect 'h' vi-backward-char        # left
 bindkey -M menuselect 'k' vi-up-line-or-history   # up
@@ -46,6 +47,15 @@ compinit
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
+# zsh parameter completion for the dotnet CLI
+
+_dotnet_zsh_complete() 
+{
+  local completions=("$(dotnet complete "$words")")
+  reply=( "${(ps:\n:)completions}" )
+}
+compctl -K _dotnet_zsh_complete dotnet
+
 # Prompt
 #source ~/repos/powerlevel10k/powerlevel10k.zsh-theme
 #source ~/Repos/agnoster-zsh-theme/agnoster.zsh-theme
@@ -64,3 +74,4 @@ fi
 
 ## Key bindings
 source "/home/fynn/repos/fzf/shell/key-bindings.zsh"
+source .scripts/fuzzy
