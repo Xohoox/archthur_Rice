@@ -11,20 +11,22 @@ super + F1
 super + F12
 		st htop
 
+super + F2
+		~/repos/Tetris/Tetris/Tetris/bin/Debug/Tetris.exe &	
 
 # Scrips
 
 ## Lock Screen
 super + shift + x
-		 repos/i3lock-fancy-multimonitor/lock -u -p -n
+		 ~/repos/i3lock-fancy-multimonitor/lock -u -p -n
 
 ## Screen Profiels
 super + alt + s
-		.scripts/screens/Screen-Profiles
+		~/.scripts/screens/Screen-Profiles
 
 ## Choose a Monitor
 super + shift + s
-		.scripts/screens/SelectMonitor
+		~/.scripts/screens/SelectMonitor
 
 ## Pass 
 super + shift + p
