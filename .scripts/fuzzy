@@ -1,5 +1,5 @@
 #!/bin/sh
 
-vsc() { du -a ~/.scripts | awk '{ print $2 }' | fzf | xargs sh -c 'vim "$@" < /dev/tty' vim; }
-vco() { du -a ~/.config  | awk '{ print $2 }' | fzf | xargs sh -c 'vim "$@" < /dev/tty' vim; }
+vsc() { ls -1 ~/.scripts | awk '{ print $2 }' | fzf | xargs sh -c 'vim "$@" < /dev/tty' vim; }
+vco() { ls -1 ~/.config  | awk '{ print $2 }' | fzf | xargs sh -c 'vim "$@" < /dev/tty' vim; }
 
