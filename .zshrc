@@ -78,3 +78,4 @@ fi
 ## Key bindings
 source "/home/fynn/repos/fzf/shell/key-bindings.zsh"
 source ~/.scripts/fuzzy
+source ~/repos/git-flow-completion/git-flow-completion.plugin.zsh
