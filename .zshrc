@@ -21,8 +21,11 @@ alias v='vim'
 alias db-start='sudo systemctl start postgresql'
 alias db-connect='psql -h localhost -d versand25'
 alias db-stop='sudo systemctl stop postgresql'
-alias config='git --git-dir=$HOME/repos/archthur_rice.git/ --work-tree=$HOME'
+alias c='git --git-dir=$HOME/repos/archthur_rice.git/ --work-tree=$HOME'
 alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
+alias myip='curl https://checkipv4.dedyn.io/'
+alias dnb='dotnet build'
+alias dnr='dotnet run'
 
 # ZSH Settings
 bindkey -v
@@ -74,4 +77,4 @@ fi
 
 ## Key bindings
 source "/home/fynn/repos/fzf/shell/key-bindings.zsh"
-source .scripts/fuzzy
+source ~/.scripts/fuzzy
