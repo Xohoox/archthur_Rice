@@ -13,11 +13,11 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 # Alias
 alias h='cd ~'
 alias cdwm='cd ~/repos/dwm'
-alias vrc='vim ~/.vimrc'
+alias vrc='vim ~/.config/nvim/init.vim'
 alias vzrc='vim ~/.zshrc'
 alias la='ls -a'
 alias ls='ls --color=auto'
-alias v='vim'
+alias v='nvim'
 alias db-start='sudo systemctl start postgresql'
 alias db-connect='psql -h localhost -d versand25'
 alias db-stop='sudo systemctl stop postgresql'
