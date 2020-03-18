@@ -8,11 +8,21 @@ super + c
 super + F1
 		st ranger
 
+super + F2
+		~/repos/Tetris/Tetris/Tetris/bin/Debug/Tetris.exe &	
+
+super + F3
+		code-insiders &
+
+super + F4
+		discord &
+
+super + F5
+		st neomutt
+
 super + F12
 		st htop
 
-super + F2
-		~/repos/Tetris/Tetris/Tetris/bin/Debug/Tetris.exe &	
 
 # Scrips
 
@@ -42,11 +52,11 @@ super + shift + c
 
 # Other
 super + F7
-		promt "Poweroff?" "poweroff"
+		promt "Poweroff?" "poweroff" &
 super + F8
-		promt "Hibernate?" "systemctl hibernate"
+		promt "Hibernate?" "systemctl hibernate" &
 super + F9
-		promt "Reboot?" "reboot"
+		promt "Reboot?" "reboot" &
 
 ## Mount / Unount
 super + F10
