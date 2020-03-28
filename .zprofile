@@ -6,7 +6,7 @@
 # variables
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="brave"
 export PATH=$PATH:$HOME/.scripts
 export TERM="st-256color"
 #

@@ -26,6 +26,8 @@ alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags &&
 alias myip='curl https://checkipv4.dedyn.io/'
 alias dnb='dotnet build'
 alias dnr='dotnet run'
+alias speed='speedtest-cli'
+alias sc='source ~/.zshrc'
 
 # ZSH Settings
 bindkey -v
