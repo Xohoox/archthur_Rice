@@ -28,7 +28,7 @@ super + F12
 
 ## Lock Screen
 super + shift + x
-		 ~/repos/i3lock-fancy-multimonitor/lock -u -p -n
+		slock
 
 ## Screen Profiels
 super + alt + s
