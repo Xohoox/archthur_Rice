@@ -46,10 +46,6 @@ super + shift + p
 super + shift + t
 		todo
 
-## Clipmenu
-super + shift + c
-		clipmenu &
-
 # Other
 super + F7
 		promt "Poweroff?" "poweroff" &
