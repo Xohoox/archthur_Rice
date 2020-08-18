@@ -19,4 +19,4 @@ elif [ "$mode" = "Laptop" ]; then
 		xrandr --output LVDS1 --auto
 fi
 
-feh --bg-scale /home/fynn/bilder/wallpaper/wall.jpg
+xwallpaper --focus bilder/wallpaper/wall.jpg
