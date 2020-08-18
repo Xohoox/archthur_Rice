@@ -1,34 +1,8 @@
-# Created by newuser for 5.6.2
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#Add .scripts to path
-#export PATH=$PATH:$HOME/.scripts
-export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
-
 # Alias
-alias h='cd ~'
-alias cdwm='cd ~/repos/dwm'
-alias vrc='nvim ~/.config/nvim/init.vim'
-alias vzrc='nvim ~/.zshrc'
-alias la='ls -a'
-alias ls='ls --color=auto'
-alias v='nvim'
-alias db-start='sudo systemctl start postgresql'
-alias db-connect='psql -h localhost -d versand25'
-alias db-stop='sudo systemctl stop postgresql'
-alias c='git --git-dir=$HOME/repos/archthur_rice.git/ --work-tree=$HOME'
-alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
-alias myip='curl https://checkipv4.dedyn.io/'
-alias myip6='curl https://checkipv6.dedyn.io/'
-alias dnb='dotnet build'
-alias dnr='dotnet run'
-alias speed='speedtest-cli'
-alias sc='source ~/.zshrc'
+[ -f ~/.config/rice/aliase.sh ] && source ~/.config/rice/aliase.sh
 
 # ZSH Settings
 bindkey -v
@@ -54,7 +28,6 @@ zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
 # zsh parameter completion for the dotnet CLI
-
 _dotnet_zsh_complete() 
 {
   local completions=("$(dotnet complete "$words")")
@@ -62,12 +35,8 @@ _dotnet_zsh_complete()
 }
 compctl -K _dotnet_zsh_complete dotnet
 
-# Prompt
-#source ~/repos/powerlevel10k/powerlevel10k.zsh-theme
-#source ~/Repos/agnoster-zsh-theme/agnoster.zsh-theme
-
 # syntax highlighting
-source /home/fynn/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Setup fzf
 export FZF_DEFAULT_OPS="--extended"
@@ -79,6 +48,6 @@ fi
 [[ $- == *i* ]] && source "/home/fynn/repos/fzf/shell/completion.zsh" 2> /dev/null
 
 ## Key bindings
-source "/home/fynn/repos/fzf/shell/key-bindings.zsh"
-source ~/.scripts/fuzzy
-source ~/repos/git-flow-completion/git-flow-completion.plugin.zsh
+[ -f ~/repos/fzf/shell/key-bindings.zsh ] && source ~/repos/fzf/shell/key-bindings.zsh
+[ -f ~/.scripts/fuzzy ] && source ~/.scripts/fuzzy
+[ -f ~/repos/git-flow-completion/git-flow-completion.plugin.zsh ] && source ~/repos/git-flow-completion/git-flow-completion.plugin.zsh
