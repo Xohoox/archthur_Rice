@@ -22,11 +22,9 @@
 # 
 setxkbmap -layout de
 xcompmgr &
-#feh --bg-scale /home/fynn/Bilder/Wallpaper/wall.jpg
+xwallpaper --focus bilder/wallpaper/wall.jpg
 sxhkd &
-#ntpd -q &
 #dwmbar &
-clipmenud &
 
 # Start dwm
 exec startdwm
