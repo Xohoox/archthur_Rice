@@ -5,9 +5,14 @@
 [ -f ~/.config/rice/aliase.sh ] && source ~/.config/rice/aliase.sh
 
 # ZSH Settings
+autoload -z edit-command-line
+zle -N edit-command-line
 bindkey -v
 bindkey '^e' edit-command-line
+
 # use the vi navigation keys (hjkl) besides cursor keys in menu completion
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 bindkey -M menuselect 'h' vi-backward-char        # left
 bindkey -M menuselect 'k' vi-up-line-or-history   # up
 bindkey -M menuselect 'l' vi-forward-char         # right
