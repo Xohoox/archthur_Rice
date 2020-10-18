@@ -26,6 +26,12 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+# Prompt
+autoload -U colors && colors
+source ~/repos/zsh-git-prompt/zshrc.sh
+PROMPT='%n%f@%F{blue}%B%m%f %~%b%f $(git_super_status) %# '
+
+
 ## Auto Completion
 autoload -Uz compinit
 compinit
