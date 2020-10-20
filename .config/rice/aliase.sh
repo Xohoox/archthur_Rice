@@ -4,8 +4,7 @@
 alias h='cd ~'
 alias cdwm='cd ~/repos/dwm'
 alias vrc='nvim ~/.config/nvim/init.vim'
-alias vzrc='nvim ~/.zshrc'
-alias la='ls -a'
+alias vzrc='nvim ~/.config/zsh/.zshrc'
 alias ls='ls --color=auto'
 alias v='nvim'
 alias db-start='sudo systemctl start postgresql'
@@ -20,3 +19,6 @@ alias dnr='dotnet run'
 alias speed='speedtest-cli'
 alias sc='source ~/.zshrc'
 alias wifi='sudo systemctl start wpa_supplicant@wlo1.service && sleep 5 && sudo dhcpcd wlo1'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget/wget-hsts"'
+alias l="lsd"
+alias la="lsd -a"

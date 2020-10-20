@@ -1,5 +1,6 @@
 #!/bin/sh
 
+[[ -f ~/.config/X11/xresources ]] && xrdb -load ~/.config/X11/xresources
 setxkbmap -layout de
 setxkbmap -option caps:escape
 xwallpaper --focus bilder/wallpaper/wall.jpg
