@@ -64,7 +64,7 @@ endif
 set tabstop=4
 set backupdir=/tmp//
 set directory=/tmp//
-set undodir=~/.vimundo/
+set undodir=$XDG_CONFIG_HOME/vimundo/
 set nocompatible
 set showcmd
 syntax enable

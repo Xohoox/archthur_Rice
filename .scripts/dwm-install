@@ -3,5 +3,6 @@
 cd ~/repos/dwm
 git checkout master
 
+rm -f config.h
 make -j5
 sudo make clean install

@@ -12,7 +12,7 @@ super + F2
 		~/repos/Tetris/Tetris/Tetris/bin/Debug/Tetris.exe &	
 
 super + F3
-		code-insiders &
+		code &
 
 super + F4
 		discord &
