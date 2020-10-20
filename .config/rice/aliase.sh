@@ -22,3 +22,4 @@ alias wifi='sudo systemctl start wpa_supplicant@wlo1.service && sleep 5 && sudo 
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget/wget-hsts"'
 alias l="lsd"
 alias la="lsd -a"
+alias sudo="sudo "
