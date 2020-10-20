@@ -23,3 +23,4 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget/wget-hsts"'
 alias l="lsd"
 alias la="lsd -a"
 alias sudo="sudo "
+alias p="git --git-dir=$HOME/.local/share/pass/.git --work-tree=$HOME/.local/share/pass"
