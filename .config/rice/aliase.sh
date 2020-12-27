@@ -1,26 +1,43 @@
 #!/bin/sh
 
 # Alias
-alias h='cd ~'
-alias cdwm='cd ~/repos/dwm'
-alias vrc='nvim ~/.config/nvim/init.vim'
-alias vzrc='nvim ~/.config/zsh/.zshrc'
-alias ls='ls --color=auto'
-alias v='nvim'
-alias db-start='sudo systemctl start postgresql'
-alias db-connect='psql -h localhost -d versand25'
-alias db-stop='sudo systemctl stop postgresql'
-alias c='git --git-dir=$HOME/repos/archthur_Rice.git/ --work-tree=$HOME'
-alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
-alias myip='curl https://checkipv4.dedyn.io/'
-alias myip6='curl https://checkipv6.dedyn.io/'
-alias dnb='dotnet build'
-alias dnr='dotnet run'
-alias speed='speedtest-cli'
-alias sc='source ~/.zshrc'
-alias wifi='sudo systemctl start wpa_supplicant@wlo1.service && sleep 5 && sudo dhcpcd wlo1'
-alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget/wget-hsts"'
+alias h="cd ~"
+alias cdwm="cd ~/repos/dwm"
+alias vrc="$EDITOR ~/.config/$EDITOR/init.vim"
+alias vzrc="$EDITOR ~/.config/zsh/.zshrc"
+alias ls="ls --color=auto"
+alias v="$EDITOR"
+alias c="git --git-dir=$HOME/repos/archthur_Rice.git/ --work-tree=$HOME"
+alias dwm-clean="cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master"
+alias myip="curl https://checkipv4.dedyn.io/"
+alias myip6="curl https://checkipv6.dedyn.io/"
+alias dnb="dotnet build"
+alias dnr="dotnet run"
+alias speed="speedtest-cli"
+alias sc="source ~/.zshrc"
+alias wifi="sudo systemctl start wpa_supplicant@wlo1.service && sleep 5 && sudo dhcpcd wlo1"
+alias lan="sudo dhcpcd enp0s25"
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget/wget-hsts""
 alias l="lsd"
 alias la="lsd -a"
+alias s="sudo "
 alias sudo="sudo "
 alias p="git --git-dir=$HOME/.local/share/pass/.git --work-tree=$HOME/.local/share/pass"
+
+# Git
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit"
+alias gd="git diff"
+alias gl="git log"
+alias glo="git log --oneline"
+alias gm="git merge"
+alias gch="git checkout"
+alias gchm="git checkout master"
+alias gchb="git checkout -B"
+alias gr="git reset"
+alias gp="git pull && git push"
+alias gpu="git pull"
+alias gb="git branch"

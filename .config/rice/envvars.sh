@@ -6,7 +6,6 @@ export BROWSER="brave"
 
 export PATH=$PATH:$HOME/.scripts
 export TERM="st-256color"
-#export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # xdg base directory
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -30,3 +29,9 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
+export HIST_IGNORE_DUPS
