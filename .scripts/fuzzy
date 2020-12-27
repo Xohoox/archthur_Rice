@@ -28,6 +28,6 @@ c()
 
 dwmapply()
 {
-				[ "$(pwd)" != "/home/$USER/repos/dwm" ] && return
-				git apply $(find ~/downloads/dwm-patches/ -type f | fzf $fzfstyle --prompt='git apply ' || exit)
+		[ "$(pwd)" != "/home/$USER/repos/dwm" ] && return
+		git apply $(find ~/downloads/dwm-patches/ -type f | fzf $fzfstyle --prompt='git apply ' || return)
 }
