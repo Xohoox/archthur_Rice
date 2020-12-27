@@ -3,12 +3,16 @@
 
 # Alias
 [ -f ~/.config/rice/aliase.sh ] && source ~/.config/rice/aliase.sh
+[ -f ~/.config/rice/envvars.sh ] && source ~/.config/rice/envvars.sh
 
 # ZSH Settings
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey -v
 bindkey '^e' edit-command-line
+setopt share_history
+setopt inc_append_history
+setopt histignorealldups
 
 # use the vi navigation keys (hjkl) besides cursor keys in menu completion
 zstyle ':completion:*' menu select
