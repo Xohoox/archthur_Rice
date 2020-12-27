@@ -6,10 +6,10 @@ super + c
 		$BROWSER
 
 super + F1
-		st ranger
+		virt-manager
 
 super + F2
-		~/repos/Tetris/Tetris/Tetris/bin/Debug/Tetris.exe &	
+		telegram-desktop &
 
 super + F3
 		code &
