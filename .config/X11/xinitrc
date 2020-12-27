@@ -1,12 +1,13 @@
 #!/bin/sh
 
-#[[ -f $HOME/.config/X11/xresources ]] && xrdb $HOME/.config/X11/xresources
 xrdb $HOME/.config/X11/xresources
 setxkbmap -layout de
 setxkbmap -option caps:escape
-xwallpaper --focus bilder/wallpaper/wall.jpg
+xwallpaper --focus $HOME/bilder/wallpaper/wall.jpg
 xcompmgr &
 sxhkd &
+numlockx &
+xbanish -s -t 4000 -b &
 
 # Start dwm
 exec startdwm
