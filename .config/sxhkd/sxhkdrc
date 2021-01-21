@@ -1,4 +1,10 @@
 # Programs
+#super + q
+#    xdo kill
+
+super + p
+    dmenu_run
+
 super + Return
 		$TERMINAL
 

@@ -15,10 +15,16 @@ vco()
 }
 
 
-gchf() 
+gchf()
 {
 		[ -d .git ] || return
     git checkout $(git branch | fzf $fzfstyle --prompt='git checkout ' || return) 
+}
+
+gmf() 
+{
+		[ -d .git ] || return
+    git merge $(git branch | fzf $fzfstyle --prompt='git merge ' || return) 
 }
 
 c()

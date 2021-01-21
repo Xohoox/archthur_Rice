@@ -61,7 +61,7 @@ endif
 
 
 " Settings
-set tabstop=4
+set tabstop=2
 set backupdir=/tmp//
 set directory=/tmp//
 set undodir=$XDG_CONFIG_HOME/vimundo/
