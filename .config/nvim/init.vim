@@ -103,3 +103,6 @@ autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c
 autocmd FileType rmd map <F2> :!vimOpenFile %<enter>
 
 "autocmd .Xresources map <F5> :!xrdb .Xresources
+
+nnoremap <silent> <O  :<c-u>put!=repeat([''],v:count)<bar>']+1<cr>
+nnoremap <silent> <o  :<c-u>put =repeat([''],v:count)<bar>'[-1<cr>
