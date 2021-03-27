@@ -1,3 +1,28 @@
-*.font: Mono:pixelsize=22:antialias=true:autohint=true:autohint=true;
-*.alpha: 0.9
-*.color0: rgb:00/00/00
+*.font: Mono:pixelsize=18:antialias=true:autohint=true:autohint=true;
+!*.font: System San Francisco Display:pixelsize=18:antialias=true:autohint=true:autohint=true;
+*.alpha: 0.5
+
+! colors
+*.foreground:   #F5D6E7
+*.background:   #0c0404
+*.color0: 			#24181a
+*.color1: 			#cb5049
+*.color4: 			#cc684c
+
+! dwm
+dwm.borderpx: 2
+dwm.gappx: 10
+dwm.snap: 32
+dwm.showbar: 1
+dwm.topbar: 1
+dwm.nmaster: 1
+dwm.resizehints: 1
+dwm.mfact: 0.55
+
+! dwm colors
+!dwm.normbgcolor: 
+dwm.normbordercolor: #251f4a
+!dwm.normfgcolor:
+!dwm.selbgcolor: 
+dwm.selbordercolor: #cb5049
+!dwm.selfgcolor: 

@@ -26,6 +26,9 @@ super + F4
 super + F5
 		st neomutt
 
+super + F6
+		youtube-tv-desktop-app &
+
 super + F12
 		st htop
 

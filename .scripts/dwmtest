@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd ~/repos/dwm
+sed -i 's/#define MODKEY Mod4Mask/#define MODKEY Mod1Mask/' config.h
+export DISPLAY=:1
+
+make -j5
+Xephyr -br -ac -noreset -screen 800x600 :1 &
+./dwm
+
+#export DISPLAY=:0
+sed -i 's/#define MODKEY Mod1Mask/#define MODKEY Mod4Mask/' 
+cd -

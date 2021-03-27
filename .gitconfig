@@ -7,3 +7,5 @@
 	editor = $EDITOR
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false

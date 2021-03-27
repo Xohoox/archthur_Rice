@@ -30,10 +30,24 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+# Better searching in command mode
+#bindkey -M vicmd '?' history-incremental-search-backward
+#bindkey -M vicmd '/' history-incremental-search-forward
+
+# Beginning search with arrow keys
+#autoload -Uz history-search-end
+#zle -N history-beginning-search-backward-end history-search-end
+#zle -N history-beginning-search-forward-end history-search-end
+
+#bindkey "^[OA" up-line-or-beginning-search
+#bindkey "^[OB" down-line-or-beginning-search
+#bindkey -M vicmd "k" up-line-or-beginning-search
+#bindkey -M vicmd "j" down-line-or-beginning-search
+
 # Prompt
 autoload -U colors && colors
 source ~/repos/zsh-git-prompt/zshrc.sh
-PROMPT='%n%f@%F{blue}%B%m%f %~%b%f $(git_super_status) %# '
+PROMPT='%n%f@%F{blue}%B%m%f %~%b%f $(git_super_status)󰞷 '
 
 
 ## Auto Completion
@@ -66,3 +80,5 @@ fi
 [ -f ~/repos/fzf/shell/key-bindings.zsh ] && source ~/repos/fzf/shell/key-bindings.zsh
 [ -f ~/.scripts/fuzzy ] && source ~/.scripts/fuzzy
 [ -f ~/repos/git-flow-completion/git-flow-completion.plugin.zsh ] && source ~/repos/git-flow-completion/git-flow-completion.plugin.zsh
+
+fish

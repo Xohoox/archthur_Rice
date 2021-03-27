@@ -1,22 +1,40 @@
 #!/bin/bash
-mode=$(echo -e "Bildschirme\nBeamer\nLaptop" | dmenu -i -fn "System San Francisco Display")
+mode=$(echo -e "Bildschirme\nFehrnseher\nBeamer\nLaptop" | dmenu -i -fn "System San Francisco Display")
 
 #Screen mode
 if [ "$mode" = "" ]; then
 		exit 1
 elif [ "$mode" = "Bildschirme" ]; then
+		#xrandr --output LVDS1 --off
+		xrandr --output DP2 --off
+		#xrandr --output VGA1 --off
+		#xrandr --output HDMI2 --auto --mode 1920x1080
+		#xrandr --output HDMI1 --auto --left-of HDMI2 --mode 1600x900
 		xrandr --output LVDS1 --off
-		xrandr --output HDMI2 --auto --mode 1920x1080
-		xrandr --output HDMI1 --auto --left-of HDMI2 --mode 1600x900
+		xrandr --output HDMI2 --primary --auto --mode 1920x1080
+		xrandr --output VGA1 --auto --left-of HDMI2 --mode 1600x900 --rotate left
+		xwallpaper --output VGA1 --zoom $HOME/bilder/.wallpaperh.jpg --output HDMI2  --zoom $HOME/bilder/.wallpaper.png
+		#xwallpaper --output VGA1 --focus bilder/wallpaper/c.png --output HDMI2  --zoom $HOME/bilder/wallpaper/tcXkuE.png
+elif [ "$mode" = "Fehrnseher" ]; then
+		xrandr --output LVDS1 --off
+		xrandr --output HDMI1 --off
+		xrandr --output HDMI2 --off
+		xrandr --output VGA1 --off
+		xrandr --output DP2 --auto --mode 1920x1080
+		xwallpaper --zoom $HOME/bilder/wallpaper/tcXkuE.png
 elif [ "$mode" = "Beamer" ]; then
 		xrandr --output LVDS1 --off
 		xrandr --output HDMI1 --off
+		xrandr --output DP2 --off
 		xrandr --output HDMI2 --mode 1024x768
 		xrandr --output VGA1 --mode 1024x768 
 elif [ "$mode" = "Laptop" ]; then
 		xrandr --output HDMI2 --off
+		xrandr --output DP2 --off
 		xrandr --output HDMI1 --off
+		xrandr --output VGA1 --off
 		xrandr --output LVDS1 --auto
 fi
 
-xwallpaper --focus bilder/wallpaper/wall.jpg
+#xwallpaper --focus bilder/wallpaper/wall.jpg
+runpolybar

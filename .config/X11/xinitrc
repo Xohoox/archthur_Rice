@@ -3,11 +3,13 @@
 xrdb $HOME/.config/X11/xresources
 setxkbmap -layout de
 setxkbmap -option caps:escape
-xwallpaper --focus $HOME/bilder/wallpaper/wall.jpg
+#xwallpaper --focus $HOME/bilder/wallpaper/wall.jpg
+xwallpaper --focus $HOME/bilder/wallpaper/tcXkuE.png
 xcompmgr &
 sxhkd &
 numlockx &
 xbanish -s -t 4000 -b &
+dunst &
 
 # Start dwm
 exec startdwm

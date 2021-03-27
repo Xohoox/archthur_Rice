@@ -3,5 +3,6 @@
 dwmbar &
 
 while true; do
+  runpolybar &
 	dwm 2> ~/.cache/dwm/dwm.log
 done

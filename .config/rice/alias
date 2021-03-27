@@ -1,0 +1,46 @@
+# Alias
+h cd ~
+cdwm cd ~/repos/dwm
+vrc $EDITOR ~/.config/$EDITOR/init.vim
+vzrc $EDITOR ~/.config/zsh/.zshrc
+ls ls --color=auto
+v nvim
+co git --git-dir=$HOME/repos/archthur_Rice.git/ --work-tree=$HOME
+dwm-clean cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master
+myip curl https://checkipv4.dedyn.io/
+myip6 curl https://checkipv6.dedyn.io/
+dnb dotnet build
+dnr dotnet run
+speed speedtest-cli
+sc source ~/.zshrc
+wifi sudo systemctl start wpa_supplicant@wlo1.service && sleep 5 && sudo dhcpcd wlo1
+lan sudo dhcpcd enp0s25
+wget wget --hsts-file=$XDG_CACHE_HOME/wget/wget-hsts
+l lsd
+la lsd -a
+udo udo
+s udo
+sudo udo
+p git --git-dir=$HOME/.local/share/pass/.git --work-tree=$HOME/.local/share/pass
+
+# Git
+g git
+gs git status
+ga git add
+gaa git add --all
+gc git commit
+gcm git commit -m
+gd git diff
+gl git log
+glo git log --oneline
+glog git log --oneline --graph
+gm git merge
+gch git checkout
+gchm git checkout master
+gchb git checkout -B
+gr git reset
+gp git pull && git push
+gpu git pull
+gb git branch
+gbd git branch -D
+gap git apply

@@ -11,6 +11,11 @@ export TERM="st-256color"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_DOCUMENTS_DIR="$HOME/dokumente"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+export XDG_PICTURES_DIR="$HOME/bilder"
+export XDG_VIDEOS_DIR="$HOME/videos"
+export XDG_MUSIC_DIR="$HOME/musik"
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
@@ -30,6 +35,7 @@ export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export GOPATH="$XDG_DATA_HOME/go"
 
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
